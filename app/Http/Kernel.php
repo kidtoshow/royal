@@ -40,6 +40,7 @@ class Kernel extends HttpKernel
         'api' => [
             // 'throttle:5000,1',
             'bindings',
+            'checklicense'
         ],
     ];
 
@@ -61,6 +62,7 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'checklicense' => \App\Http\Middleware\CheckLicense::class,
     ];
 
     /**
